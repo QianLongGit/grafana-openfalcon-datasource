@@ -15,17 +15,26 @@ brew install grafana
 ```
 
 ### Checkout the plugin
-```
+```shell
 cd {GRAFANA_PATH_Installed}/data/plugins
 git clone https://github.com/open-falcon/grafana-openfalcon-datasource
+
+# 修正
+cd /usr/share/grafana/public/app/plugins/datasource # ubuntu
+sudo git clone https://github.com/open-falcon/grafana-openfalcon-datasource
+sudo mv grafana-openfalcon-datasource fastweb-openfalcon-datasource
 ```
 
 ### Start grafana-server
-```
+```shell
 {GRAFANA_PATH_Installed}/bin/grafana-server
+
+# 修正
+sudo service grafana-server start # http://docs.grafana.org/installation/debian/#start-the-server-init-d-service
 ```
 
 ## After Installation
+
 If the installation is successful, Open-Falcon datasource would be shown as follow:
 ![](img/openfalcon_datasource.png)
 
